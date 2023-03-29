@@ -2,7 +2,7 @@
 (function(){
 	if(!localStorage.getItem('noname_alerted')){
 		localStorage.setItem('noname_alerted',true);
-		alert('无名杀官方发布地址仅有GitHub仓库！\n其他所有的所谓“无名杀”社群（包括但不限于绝大多数“官方”QQ群、QQ频道等）均为粉丝自发组织，与无名杀官方无关！');
+		//alert('无名杀官方发布地址仅有GitHub仓库！\n其他所有的所谓“无名杀”社群（包括但不限于绝大多数“官方”QQ群、QQ频道等）均为粉丝自发组织，与无名杀官方无关！');
 	}
 	var _status={
 		paused:false,
@@ -41,12 +41,14 @@
 		configprefix:'noname_0.9_',
 		versionOL:27,
 		updateURLS:{
-			coding:'https://ghproxy.com/https://raw.githubusercontent.com/libccy/noname',
-			github:'https://raw.githubusercontent.com/libccy/noname',
+			//coding:'https://ghproxy.com/https://raw.githubusercontent.com/wpaged/noname',
+			coding:'https://raw.githubusercontent.com/wpaged/noname',
+			github:'https://raw.githubusercontent.com/wpaged/noname',
 		},
-		updateURL:'https://raw.githubusercontent.com/libccy/noname',
-		mirrorURL:'https://nakamurayuri.coding.net/p/noname/d/noname/git/raw',
-		hallURL:'47.99.105.222',
+		updateURL:'https://raw.githubusercontent.com/wpaged/noname',
+		//mirrorURL:'https://nakamurayuri.coding.net/p/noname/d/noname/git/raw',
+		mirrorURL:'https://raw.githubusercontent.com/wpaged/noname',
+		hallURL:'tamugame.azurewebsites.net',
 		assetURL:'',
 		changeLog:[],
 		updates:[],
@@ -5698,7 +5700,7 @@
 					},
 					wss_mode:{
 						name:'使用WSS协议',
-						init:false,
+						init:true,
 						frequent:true,
 						intro:'在用户填写的IP地址没有直接指定使用WS/WSS协议的情况下，默认使用WSS协议，而非WS协议来连接到联机服务器。<br>请不要轻易勾选此项！',
 					},
@@ -30559,7 +30561,7 @@
 				}
 			}
 			if(!withport){
-				ip=ip+':8080';
+				ip=ip//+':8080';
 			}
 			_status.connectCallback=callback;
 			try{
