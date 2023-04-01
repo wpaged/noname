@@ -38133,6 +38133,7 @@
 								if(!input.innerHTML||get.is.banWords(input.innerHTML)){
 									input.innerHTML='无名玩家';
 								}
+								//input.innerHTML=localStorage.getItem('login_name')
 								input.innerHTML=input.innerHTML.slice(0,12);
 								game.saveConfig('connect_nickname',input.innerHTML);
 								game.saveConfig('connect_nickname',input.innerHTML,'connect');
@@ -51460,7 +51461,11 @@
 			return num;
 		},
 		connectNickname:function(){
-			return typeof lib.config.connect_nickname=='string'?(lib.config.connect_nickname.slice(0,12)):'无名玩家';
+			//lib.config.connect_nickname=localStorage.getItem('login_name')
+			var login_name=localStorage.getItem('login_name')
+			//console.log(login_name)
+			return typeof login_name=='string'?(login_name.slice(0,12)):'无名玩家';
+			//return typeof lib.config.connect_nickname=='string'?(lib.config.connect_nickname.slice(0,12)):'无名玩家';
 		},
 		zhinangs:function(filter){
 			var list=(_status.connectMode?lib.configOL:lib.config).zhinang_tricks;
