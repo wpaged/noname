@@ -48,7 +48,7 @@
 		updateURL:'https://raw.githubusercontent.com/wpaged/noname',
 		//mirrorURL:'https://nakamurayuri.coding.net/p/noname/d/noname/git/raw',
 		mirrorURL:'https://raw.githubusercontent.com/wpaged/noname',
-		hallURL:'tamugame.azurewebsites.net',
+		hallURL:'tamu-game.azurewebsites.net',
 		assetURL:'',
 		changeLog:[],
 		updates:[],

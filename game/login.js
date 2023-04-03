@@ -17,6 +17,7 @@ async function main () {
     if (isAuthenticated) {
         // show the gated content
         window.logininfo = await auth0Client.getUser()
+        localStorage.setItem('login_name',window.logininfo.name.split(',')[1]);
         return;
       }
 
@@ -27,9 +28,9 @@ async function main () {
         await auth0Client.handleRedirectCallback();
             
         // Use replaceState to redirect the user away and remove the querystring parameters
+        window.logininfo = await auth0Client.getUser()
+        localStorage.setItem('login_name',window.logininfo.name.split(',')[1]);
         window.history.replaceState({}, document.title, "/");
-        let logininfo = await auth0Client.getUser()
-        localStorage.setItem('login_name',logininfo.name.split(',')[1]);
 
       }else{
         forceLogin();
